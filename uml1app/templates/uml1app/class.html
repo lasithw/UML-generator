@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+       body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+nav{
+    color: blue;
+}
+
+.btn {
+    width:1110;
+    text-align: center;
+
+}
+#heading1{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(38, 38, 190);
+    font-family:Palatino Linotype;
+}
+
+#heading4{
+color: rgba(90, 107, 167, 0.898);
+}
+p{
+    font-family:Lucida Sans Unicode;
+    color: rgba(90, 107, 167, 0.897);
+}
+
+
+
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url(/static/images/background1.jpg);
+  width: auto;
+  height: 800px;
+   -webkit-filter: opacity(.50);
+  filter: opacity(.50);
+}
+
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 1500px;
+  height: 680px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+    .jumbotron{
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:1px;
+        padding-bottom:0px;
+        background-color: rgb(96, 220, 236);
+    }
+
+
+#default{
+ height: 500px;
+ width: 50%;
+ padding-top:20px;
+ padding-bottom:20px;
+ padding-left:0px;
+ padding-right:0px;
+ background-color: rgb(180, 216, 235);
+}
+
+.con {
+    max-width: 700px;
+    max-height: 500px;
+    background-size: cover;
+}​
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/logo.png" />
+    <title>UML Designer</title>
+
+
+</head>
+<body>
+<div class="background-image"></div>
+<div class="content">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img align="left" src="/static/images/logo.png" width="30" height="30" alt=""><span>Ants UML designer</span></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <form action="/home" class="inline">
+                        <button class="btn btn-dark" style="background-color: #222;color:#c2c4c6;height:52px" >Home</button>
+                    </form>
+                </li>
+                <li>
+                    <a href=" ">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">More</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div style="margin-top:50px">
+<br>
+  <div class="modal-body row">
+  <div class="col-md-4">
+      <div id="buttons">
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="class_div">Classes</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="rel_div">Attributes</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="usecase_div">Methods</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="diagram_div">DrawDiagram</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="model_div">AntsModel</button>
+      <br><br>
+      <div class="jumbotron" id="further_details" style="width:75%;background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+      <form action="/userinput/" method="post"><br>
+           <p>Check to map the classes</p>
+           <table id="tb1">
+                 {% for key,values in feClassLoop%}
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{values}}</td>
+                    <td> <input type="checkbox" name="checks[]" value={{key}}--{{values}}></td>
+                </tr>
+                {% endfor %}
+           </table>
+          <table id="tb2">
+              <tr>
+                  <td>
+                      <table>
+                        <th>Aggregation</th>
+                         {% for key,value in feagrigation%}
+                        <tr>
+                            <td>{{key}}</td>
+                            <td> <input type="checkbox" name="checks2[]" value="{{value}}"></td>
+                        </tr>
+                          {% endfor %}
+                      </table>
+                  </td>
+                  <td>
+                      <table>
+                            <th>Composition</th>
+                           {% for key,value in fecomposition%}
+                            <tr>
+                                <td>{{key}}</td>
+                                <td> <input type="checkbox" name="checks1[]" value="{{value}}"></td>
+                            </tr>
+                            {% endfor %}
+                      </table>
+                  </td>
+              </tr>
+          </table>
+          <br>
+               <button class="btn" id="submitchekbox">Submit my selsection</button>
+      </form>
+      </div>
+      <div class="jumbotron" id="check_again" style="width:75%;background-color: rgb(180, 216, 235);padding-top:1px;display:none;"><br>
+              <button class="btn" id="change">Click here to change the class mapping</button>
+      </div>
+      </div>
+  </div>
+    <!-- Your first column here -->
+  <div class="col-md-7" id="default">
+      <h4 id="heading4">&nbsp;&nbsp;&nbsp;Please click left side to get the results....</h4>
+    <!-- Your second column here -->
+
+      <div class="jumbotron"  id="class_dis" style=" background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+        <h2 id="heading1">Classes</h2>
+        <ul>
+         {% for cl in feClass%}
+            <li>{{cl}}</li>
+         {% endfor %}
+        </ul>
+        <!--<a class="btn btn-info " id="hide1" href="#" onclick="hideDiv1()"><< Go Back <<</a>-->
+      </div>
+
+    <div class="jumbotron"  id="rel_dis"  style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <h2 id="heading1" >Attributes</h2>
+    <table>
+        <tr>
+            <td><b>Class</b></td>
+            <td><b>Attribute</b></td>
+        </tr>
+        {% for key,values in feAttributes%}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{values}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+        <br>
+    <!--<a class="btn btn-info " id="hide2" href="#" onclick="hideDiv2()"><< Go Back << </a>-->
+    </div>
+
+    <div class="jumbotron" id="usecase_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <h2 id="heading1" >Methods</h2>
+     <table>
+        <tr>
+            <td><b>Class</b></td>
+            <td><b>Methods</b></td>
+        </tr>
+         {% for key,values in feMethods%}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{values}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+        <!--<a class="btn btn-info " id="hide3" href="#" onclick="hideDiv3()"><< Go Back <<</a>-->
+    </div>
+    <br>
+    <div class="jumbotron" id="diagram_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;text-align: center">
+    <div  id="fullsized_image_holder">
+    {% load static %}
+    <img class="con" src="{% static "images/draft.png" %}" alt="UsecaseDiagram" onLoad="this.src='{% static "images/draft.png" %}?' + (new Date()).getTime()">
+    </div>
+    <br><br>
+    <a class="btn btn-info  " href="#"
+    onclick="this.href = $('#fullsized_image_holder img:first').attr('src');"
+    download>Click here to download image</a>
+    </div>
+    <div class="jumbotron" id="model_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <div  id="fullsized_image_holder2">
+    {% load static %}
+    <img src="{% static "images/antsModel.docx" %}" alt="AntsModel download link is below." onLoad="this.src='{% static "images/antsModel.docx" %}?' + (new Date()).getTime()">
+    </div>
+    <br><br>
+    <a class="btn btn-info  " href="#"
+    onclick="this.href = $('#fullsized_image_holder2 img:first').attr('src');"
+    download>Click here to download Daomain Specific Text file</a>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  </div>
+<script type="text/javascript">
+if ({{flagc}} == 2) {
+       $('#diagram_dis').show();
+       $('#further_details').hide();
+       $('#check_again').show();
+}
+
+if ({{flagc}} == 6) {
+       $('#diagram_dis').show();
+       $('#further_details').hide();
+       $('#check_again').show();
+}
+$('#change').on('click',function(){
+     $('#diagram_dis').show();
+     $('#further_details').show();
+     if ({{flagc}} == 6) {
+        $('#tb2').hide();
+     }
+     $('#check_again').hide();
+
+});
+$('#class_div').on('click',function(){
+    $('#class_dis').show();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide()
+    $('#further_details').hide();
+    $('#check_again').hide();
+    $('#model_dis').hide();
+
+});
+$('#rel_div').on('click',function(){
+    $('#class_dis').hide();
+    $('#rel_dis').show();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide()
+    $('#further_details').hide();
+    $('#check_again').hide();
+    $('#model_dis').hide();
+
+});
+$('#usecase_div').on('click',function(){
+    $('#class_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').show();
+    $('#diagram_dis').hide();
+    $('#further_details').hide();
+    $('#check_again').hide();
+    $('#model_dis').hide();
+
+});
+$('#diagram_div').on('click',function(){
+    $('#class_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').show();
+    if ({{flagc}} == 3) {
+       $('#further_details').hide();
+       $('#check_again').hide();
+    }
+    if ({{flagc}} == 4) {
+       $('#further_details').show();
+       $('#tb1').hide();
+       $('#check_again').hide();
+    }
+    if ({{flagc}} == 5) {
+       $('#further_details').show();
+       $('#tb2').hide();
+       $('#check_again').hide();
+    }
+    if ({{flagc}} == 6) {
+       $('#further_details').show();
+       $('#tb2').hide();
+       $('#check_again').hide();
+    }
+    $('#model_dis').hide();
+
+});
+$('#model_div').on('click',function(){
+    $('#class_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide();
+    $('#further_details').hide();
+    $('#check_again').hide();
+    $('#model_dis').show();
+});
+</script>
+</div>
+</div>
+</body>
+</html>

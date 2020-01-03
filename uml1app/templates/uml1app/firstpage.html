@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <style>
+        body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+nav{
+    color: blue;
+}
+
+#btn {
+    background-color: tomato;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(15, 15, 95);
+    font-weight: bold;
+    font-family:Lucida Sans Unicode;
+}
+#heading1{
+     font-size: 50px;
+    font-weight: bold;
+    color: rgb(15, 15, 95);
+    font-family:Palatino Linotype;
+}
+#heading2{
+     font-size: 35px;
+    font-weight: bold;
+    color: rgb(15, 15, 95);
+    font-family:Palatino Linotype;
+}
+p{
+    font-family:Lucida Sans Unicode;
+    color: rgb(49, 6, 90);
+}
+
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url(/static/images/background1.jpg);
+  width: auto;
+  height: 800px;
+   -webkit-filter: opacity(.50);
+  filter: opacity(.50);
+}
+
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+    </style>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+
+ <!--<script src="jquery-3.3.1.min.js"></script>-->
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/logo.png" />
+    <title>UML Designer</title>
+
+</head>
+<body>
+<div class="background-image"></div>
+<div class="content">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img align="left" src="/static/images/logo.png" width="30" height="30" alt=""><span>Ants UML designer</span></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <form action="/home" class="inline">
+                        <button class="btn btn-dark" style="background-color: #222;color:#c2c4c6;height:52px" >Home</button>
+                    </form>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">More</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+     <div style="margin-top:50px">
+<h1 id="heading1">ANTS UML Designer</h1>
+<p>User Requirement Analysis for Rapid UML Diagram Designing</p>
+<form class="form-group text-center" id="textform" method="post" action="/getrequirement/">
+    <label id="heading2">Please enter your requirement</label>
+    <br><br>
+    <textarea name="requirement" style="width: 834px; height: 252px;"></textarea>
+    <br><br>
+
+  <p hidden><input type="radio" name="diagramtype" id="usecase"/>Usecase
+      <input type="radio" name="diagramtype" id ="class"/> Class
+  <input type="radio" name="diagramtype" id="activity"/>Activity
+      <input type="radio" name="diagramtype" id="sequence"/> Sequence<br></p>
+    <button class="btn" id="btn">Proceed my requirement</button>
+</form>
+        </div>
+</div>
+<script type="text/javascript">
+window.onload = function (){
+    var temp = location.search.substring(1).split("=");
+    l = unescape(temp[1]);
+    console.log("a");
+    if (l == "'usecase'"){
+        console.log("b");
+        document.getElementById("usecase").checked = true;
+        $('#textform').attr('action', '/getrequirement/');
+
+        }
+    if (l == "'class'"){
+        console.log("b");
+        document.getElementById("class").checked = true;
+        $('#textform').attr('action', '/classpage/');
+
+
+        }
+    if (l == "'activity'"){
+        console.log("b");
+        document.getElementById("activity").checked = true;
+        $('#textform').attr('action', '/activitypage/');
+
+        }
+    if (l == "'sequence'"){
+        console.log("b");
+        document.getElementById("sequence").checked = true;
+        $('#textform').attr('action', '/sequencepage/');
+
+        }
+
+  }
+    $('#usecase').on ('click',function(e){
+       $('#textform').attr('action', '/getrequirement/');
+    });
+
+    $('#activity').on ('click',function(e){
+       $('#textform').attr('action', '/activitypage/');
+    });
+    $('#sequence').on ('click',function(e){
+       $('#textform').attr('action', '/sequencepage/');
+    });
+
+    $('#class').on ('click',function(e){
+       $('#textform').attr('action', '/classpage/');
+    });
+</script>
+</body>
+</html>

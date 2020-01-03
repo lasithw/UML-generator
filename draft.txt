@@ -1,0 +1,7 @@
+@startuml
+record->rating: music playlist creator computer system predicts rating or preference
+project->song: project
+[o->o]: system divided
+rating->song: end
+database->backend: consist
+@enduml

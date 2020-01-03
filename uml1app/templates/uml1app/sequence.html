@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+       body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+nav{
+    color: blue;
+}
+
+.btn {
+    width:1110;
+    text-align: center;
+
+}
+#heading1{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(38, 38, 190);
+    font-family:Palatino Linotype;
+}
+
+#heading4{
+color: rgba(90, 107, 167, 0.898);
+}
+p{
+    font-family:Lucida Sans Unicode;
+    color: rgba(90, 107, 167, 0.897);
+}
+
+
+
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url(/static/images/background1.jpg);
+  width: auto;
+  height: 800px;
+   -webkit-filter: opacity(.50);
+  filter: opacity(.50);
+}
+
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 1500px;
+  height: 680px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+    .jumbotron{
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:1px;
+        padding-bottom:0px;
+        background-color: rgb(96, 220, 236);
+    }
+
+
+#default{
+ height: 500px;
+ width: 50%;
+ padding-top:20px;
+ padding-bottom:20px;
+ padding-left:0px;
+ padding-right:0px;
+ background-color: rgb(180, 216, 235);
+}
+
+.con {
+    max-width: 700px;
+    max-height: 500px;
+    background-size: cover;
+}​
+
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/logo.png" />
+    <title>UML Designer</title>
+
+
+</head>
+<body>
+<div class="background-image"></div>
+<div class="content">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img align="left" src="/static/images/logo.png" width="30" height="30" alt=""><span>Ants UML designer</span></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">More</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div style="margin-top:50px">
+<br>
+  <div class="modal-body row">
+  <div class="col-md-4">
+      <div id="buttons">
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="actor_div">Messages</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="loops">loops</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="condition_dis">Conditions</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="diagram_div">DrawDiagram</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="model_div">AntsModel</button>
+          <br><br><br>
+      </div>
+
+     <div class="jumbotron" id="further_details" style="width:75%;background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+      <form action="/seq_input/" method="POST" id="MyForm" name="form1"><br>
+          <p style="color:black;font-size:14px">These messages haven't reciever.</p>
+          <p style="color:black;font-size:14px">If you want you can add recivers</p>
+          <table id="tb1">
+              <tr>
+                  <th style="display:none;">Key</th>
+                  <th>Message</th>
+                  <th>Reciver</th>
+              </tr>
+                 {% for key,values in NullList.items%}
+                <tr>
+                    <td style="display:none;">{{key}}</td>
+                    <td>{{values}}</td>
+                    <td><input type="text" id="id_1" name={{key}} value="" onkeyup="functionABC()"></td>
+                    <td><input type="hidden" id="y" name="y" value={{key}} onkeyup="functionABC()"></td>
+                    <td><input type="hidden" id="z" name="z" value="lyno" onkeyup="functionABC()"></td>
+                </tr>
+                {% endfor %}
+           </table>
+           <br>
+           <input type="submit" value="SubmitMyInputs">
+      </form>
+     </div>
+       <div class="jumbotron" id="further_details_else" style="width:75%;background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+      <form action="/seq_input/" method="POST" id="MyForm_else" name="form1"><br>
+          <p style="color:black;font-size:14px">These else messages haven't reciever.</p>
+          <table id="tb1">
+              <tr>
+                  <th style="display:none;">Key</th>
+                  <th>Message</th>
+                  <th>Reciver</th>
+              </tr>
+                 {% for key,values in NullList_else.items%}
+                <tr>
+                    <td style="display:none;">{{key}}</td>
+                    <td>{{values}}</td>
+                    <td><input type="text" id="id_1" name={{key}} value="" onkeyup="functionABC()"></td>
+                    <td><input type="hidden" id="y" name="y" value={{key}} onkeyup="functionABC()"></td>
+                    <td><input type="hidden" id="z" name="z" value="lassana" onkeyup="functionABC()"></td>
+                </tr>
+                {% endfor %}
+           </table>
+           <br>
+           <input type="submit" value="SubmitMyInputs_else">
+      </form>
+     </div>
+  </div>
+    <!-- Your first column here -->
+  <div class="col-md-7" id="default">
+      <h4 id="heading4">&nbsp;&nbsp;&nbsp;Please click left side to get the results....</h4>
+    <!-- Your second column here -->
+
+      <div class="jumbotron"  id="actor_dis" style=" background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+        <h2 id="heading1">Participants</h2>
+        <table>
+            <tr>
+                <th><b>Sender</b></th>
+                <th><b>Reciver</b></th>
+                <th><b>Message<b></th>
+                <th><b>Message Type<b></th>
+
+            </tr>
+
+         {% for values in seq_items %}
+            <tr>
+            <td>{{values.sender}}</td>
+            <td>{{values.reciever}}</td>
+            <td>{{values.Message}}</td>
+                <td>{{values.MessageType}}</td>
+
+            </tr>
+        {% endfor %}
+
+        </table>
+
+        <!--<a class="btn btn-info " id="hide1" href="#" onclick="hideDiv1()"><< Go Back <<</a>-->
+      </div>
+
+      <div class="jumbotron"  id="loop_div" style=" background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+        <h2 id="heading1">loops</h2>
+        <table>
+            <tr>
+                <th><b>Sender</b></th>
+                <th><b>Reciver</b></th>
+                <th><b>Message<b></th>
+
+            </tr>
+
+         {% for values in loops %}
+            <tr>
+            <td>{{values.sender}}</td>
+            <td>{{values.reciever}}</td>
+            <td>{{values.Message}}</td>
+
+            </tr>
+        {% endfor %}
+
+        </table>
+
+        <!--<a class="btn btn-info " id="hide1" href="#" onclick="hideDiv1()"><< Go Back <<</a>-->
+      </div>
+
+       <div class="jumbotron"  id="condition_div" style=" background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+        <h2 id="heading1">Conditions</h2>
+        <table>
+            <tr>
+                <th><b>Sender</b></th>
+                <th><b>Reciver</b></th>
+                <th><b>Message<b></th>
+                <th><b>Condition<b></th>
+                <th><b>Condition Message<b></th>
+                <th><b>Else Message<b></th>
+
+
+            </tr>
+
+
+         {% for values in conditions %}
+            <tr>
+            <td>{{values.sender}}</td>
+            <td>{{values.reciever}}</td>
+            <td>{{values.Message}}</td>
+            <td>{{values.conditions}}</td>
+            <td>{{values.conditionMsg}}</td>
+            <td>{{values.elsemsg}}</td>
+            </tr>
+        {% endfor %}
+
+        </table>
+
+        <!--<a class="btn btn-info " id="hide1" href="#" onclick="hideDiv1()"><< Go Back <<</a>-->
+      </div>
+
+
+    <div class="jumbotron" id="usecase_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <h2 id="heading1" >Usecases</h2>
+    <ul>
+    {% for key,values in usecases %}
+    <li>{{values}}</li>
+
+    {% endfor %}
+    </ul>
+        <!--<a class="btn btn-info " id="hide3" href="#" onclick="hideDiv3()"><< Go Back <<</a>-->
+    </div>
+    <br>
+    <div class="jumbotron" id="diagram_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;text-align: center">
+    <div  id="fullsized_image_holder">
+    {% load static %}
+    <img class="con" src="{% static "images/draft.png" %}" alt="SequenceDiagram" onLoad="this.src='{% static "images/draft.png" %}?' + (new Date()).getTime()">
+    </div>
+    <br><br>
+    <a class="btn btn-info  " href="#"
+    onclick="this.href = $('#fullsized_image_holder img:first').attr('src');"
+    download>Click here to download image</a>
+    </div>
+    <div class="jumbotron" id="model_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <div  id="fullsized_image_holder2">
+    {% load static %}
+    <img src="{% static "images/antsModel.docx" %}" alt="AntsModel download link is below." onLoad="this.src='{% static "images/antsModel.docx" %}?' + (new Date()).getTime()">
+    </div>
+    <br><br>
+    <a class="btn btn-info  " href="#"
+    onclick="this.href = $('#fullsized_image_holder2 img:first').attr('src');"
+    download>Click here to download Daomain Specific Text file</a>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  </div>
+<script type="text/javascript">
+$('#actor_div').on('click',function(){
+    $('#actor_dis').show();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide()
+    $('#model_dis').hide();
+    $('#loop_div').hide();
+    $('#condition_div').hide();
+});
+
+$('#loops').on('click',function(){
+    $('#loop_div').show();
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide()
+    $('#model_dis').hide();
+    $('#condition_div').hide();
+});
+
+$('#rel_div').on('click',function(){
+    $('#actor_dis').hide();
+    $('#rel_dis').show();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide()
+    $('#model_dis').hide();
+    $('#loop_div').hide();
+    $('#condition_div').hide();
+});
+$('#usecase_div').on('click',function(){
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').show();
+    $('#diagram_dis').hide();
+    $('#model_dis').hide();
+    $('#loop_div').hide();
+     $('#condition_div').hide();
+});
+
+$('#condition_dis').on('click',function(){
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide();
+    $('#model_dis').hide();
+    $('#loop_div').hide();
+    $('#condition_div').show();
+});
+
+
+$('#diagram_div').on('click',function(){
+<!--$.ajax({-->
+               <!--type: "POST",-->
+               <!--url: "drawDiagram/",-->
+               <!--success: function(response) {-->
+                        <!--$("html").html(response);-->
+                <!--},-->
+                <!--error: function(rs, e) {-->
+                       <!--alert(rs.responseText);-->
+                <!--}-->
+          <!--});-->
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').show();
+    $('#model_dis').hide();
+    $('#loop_div').hide();
+     $('#condition_div').hide();
+});
+$('#model_div').on('click',function(){
+ <!--$.ajax({-->
+               <!--type: "POST",-->
+               <!--url: "antsModel/",-->
+               <!--success: function(response) {-->
+                        <!--$("html").html(response);-->
+                <!--},-->
+                <!--error: function(rs, e) {-->
+                       <!--alert(rs.responseText);-->
+                <!--}-->
+          <!--});-->
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide();
+    $('#model_dis').show();
+    $('#loop_div').hide();
+    $('#condition_div').hide();
+});
+ var a = "{{participants}}";
+ var b= "{{NoOfNulls}}"
+ var c="{{NullList|safe}}"
+ var keys="{{NullKeys}}"
+ myObject = JSON.parse(keys);
+
+
+ console.log(myObject);
+ console.log("object");
+ for(var key in myObject){
+      console.log(myObject[key]);
+      var searchString=myObject[key];
+      console.log(myObject[key]);
+   }
+
+ if(b!=0){
+    document.getElementById("further_details").style.display = "block";
+ }
+ else{
+    document.getElementById("further_details").style.display = "none";
+ }
+
+var b_else= "{{NoOfNulls_else}}"
+ var c_else="{{NullList_else|safe}}"
+ var keys_else="{{NullKeys_else}}"
+ myObject_else = JSON.parse(keys_else);
+
+ if(b_else!=0){
+    document.getElementById("further_details_else").style.display = "block";
+ }
+ else{
+    document.getElementById("further_details_else").style.display = "none";
+ }
+
+  <!--var jsonArr = [];-->
+ <!--function get_details(e){-->
+
+  <!--console.log("submit");-->
+  <!--console.log(myObject);-->
+  <!--for(var value in myObject){-->
+  <!--var x=document.getElementById(myObject[value]).value;-->
+
+  <!--jsonArr.push({-->
+        <!--key:myObject[value],-->
+        <!--reciever:x-->
+    <!--});-->
+  <!--}-->
+  <!--alert(JSON.stringify(jsonArr));-->
+
+  <!--get_ajax(jsonArr);-->
+  <!--console.log("jsonarr")-->
+  <!--console.log(JSON.stringify(jsonArr))-->
+
+<!--}-->
+<!--function get_ajax(jsonArr){-->
+
+  <!--$.ajax({-->
+                    <!--method: 'POST',-->
+                    <!--url:  $('#MyForm').attr('action'),-->
+                    <!--data: {'data': JSON.stringify(jsonArr)},-->
+                    <!--success: function(response) {-->
+                        <!--console.log(response)-->
+                        <!--alert('success');-->
+                    <!--},-->
+                    <!--error: function(response) {-->
+                        <!--console.error(response)-->
+                        <!--alert('error');-->
+                    <!--}-->
+                <!--});-->
+<!--&lt;!&ndash;window.location.replace('../uml1app/firstpage')&ndash;&gt;-->
+<!--}-->
+function functionABC()
+{
+   for(var key in myObject){
+      var searchString=myObject[key];
+      console.log("mm");
+      console.log(searchString);
+      if(searchString==1){
+       console.log("huree");
+      }
+      var x=id_1
+      document.getElementById("z").value = $("#x").val()+":"+searchString;
+   }
+   <!--var searchString=$("#x").val()+":"+$("#y").val();-->
+   <!--//make the ajax call-->
+   <!--document.getElementById("z").value = searchString;-->
+}
+<!--document.getElementById("z").value = "vvv";-->
+</script>
+</div>
+</div>
+</body>

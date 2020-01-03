@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+       body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+nav{
+    color: blue;
+}
+
+.btn {
+    width:1110;
+    text-align: center;
+
+}
+#heading1{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(38, 38, 190);
+    font-family:Palatino Linotype;
+}
+
+#heading4{
+color: rgba(90, 107, 167, 0.898);
+}
+p{
+    font-family:Lucida Sans Unicode;
+    color: rgba(90, 107, 167, 0.897);
+}
+
+
+
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url(/static/images/background1.jpg);
+  width: auto;
+  height: 800px;
+   -webkit-filter: opacity(.50);
+  filter: opacity(.50);
+}
+
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 1500px;
+  height: 680px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+    .jumbotron{
+        padding-left:20px;
+        padding-right:20px;
+        padding-top:1px;
+        padding-bottom:0px;
+        background-color: rgb(96, 220, 236);
+    }
+
+
+#default{
+ height: 500px;
+ width: 50%;
+ padding-top:20px;
+ padding-bottom:20px;
+ padding-left:0px;
+ padding-right:0px;
+ background-color: rgb(180, 216, 235);
+}
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/logo.png" />
+    <title>UML Designer</title>
+
+
+</head>
+<body>
+<div class="background-image"></div>
+<div class="content">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img align="left" src="/static/images/logo.png" width="30" height="30" alt=""><span>Ants UML designer</span></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <form action="/home" class="inline">
+                        <button class="btn btn-dark" style="background-color: #222;color:#c2c4c6;height:52px" >Home</button>
+                    </form>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">More</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div style="margin-top:50px">
+<br>
+  <div class="modal-body row">
+  <div class="col-md-4">
+      <div id="buttons">
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="actor_div">Actors</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="rel_div">Relations</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="usecase_div">Usecases</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="diagram_div">DrawDiagram</button>
+      <br><br>
+      <button  class="btn btn-primary btn-lg" style = "width:75%" id="model_div">AntsModel</button>
+      </div>
+  </div>
+    <!-- Your first column here -->
+  <div class="col-md-7" id="default">
+      <h4 id="heading4">&nbsp;&nbsp;&nbsp;Please click left side to get the results....</h4>
+    <!-- Your second column here -->
+
+      <div class="jumbotron"  id="actor_dis" style=" background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+        <h2 id="heading1">Actors</h2>
+        <ul>
+         {% for key, values in relations %}
+        <li>{{key}}</li>
+        {% endfor %}
+        </ul>
+        <!--<a class="btn btn-info " id="hide1" href="#" onclick="hideDiv1()"><< Go Back <<</a>-->
+      </div>
+
+    <div class="jumbotron"  id="rel_dis"  style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <h2 id="heading1" >Relations</h2>
+    <table>
+        <tr>
+            <td><b>Actor</b></td>
+            <td><b>Relation</b></td>
+        </tr>
+        {% for key, values in relations %}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{values}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+        <br>
+    <!--<a class="btn btn-info " id="hide2" href="#" onclick="hideDiv2()"><< Go Back << </a>-->
+    </div>
+
+    <div class="jumbotron" id="usecase_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <h2 id="heading1" >Usecases</h2>
+    <ul>
+    {% for key,values in usecases %}
+    <li>{{values}}</li>
+
+    {% endfor %}
+    </ul>
+        <!--<a class="btn btn-info " id="hide3" href="#" onclick="hideDiv3()"><< Go Back <<</a>-->
+    </div>
+    <br>
+    <div class="jumbotron" id="diagram_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;text-align: center">
+    <div  id="fullsized_image_holder">
+    {% load static %}
+    <img src="{% static "images/draft.png" %}" alt="UsecaseDiagram" onLoad="this.src='{% static "images/draft.png" %}?' + (new Date()).getTime()">
+    </div>
+    <br><br>
+    <a class="btn btn-info  " href="#"
+    onclick="this.href = $('#fullsized_image_holder img:first').attr('src');"
+    download>Click here to download image</a>
+    </div>
+    <div class="jumbotron" id="model_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
+    <div  id="fullsized_image_holder2">
+    {% load static %}
+    <img src="{% static "images/antsModel.docx" %}" alt="AntsModel download link is below." onLoad="this.src='{% static "images/antsModel.docx" %}?' + (new Date()).getTime()">
+    </div>
+    <br><br>
+    <a class="btn btn-info  " href="#"
+    onclick="this.href = $('#fullsized_image_holder2 img:first').attr('src');"
+    download>Click here to download Daomain Specific Text file</a>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+  </div>
+<script type="text/javascript">
+$('#actor_div').on('click',function(){
+    $('#actor_dis').show();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide()
+    $('#model_dis').hide();
+
+});
+$('#rel_div').on('click',function(){
+    $('#actor_dis').hide();
+    $('#rel_dis').show();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide()
+    $('#model_dis').hide();
+
+});
+$('#usecase_div').on('click',function(){
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').show();
+    $('#diagram_dis').hide();
+    $('#model_dis').hide();
+
+});
+$('#diagram_div').on('click',function(){
+<!--$.ajax({-->
+               <!--type: "POST",-->
+               <!--url: "drawDiagram/",-->
+               <!--success: function(response) {-->
+                        <!--$("html").html(response);-->
+                <!--},-->
+                <!--error: function(rs, e) {-->
+                       <!--alert(rs.responseText);-->
+                <!--}-->
+          <!--});-->
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').show();
+    $('#model_dis').hide();
+
+});
+$('#model_div').on('click',function(){
+ <!--$.ajax({-->
+               <!--type: "POST",-->
+               <!--url: "antsModel/",-->
+               <!--success: function(response) {-->
+                        <!--$("html").html(response);-->
+                <!--},-->
+                <!--error: function(rs, e) {-->
+                       <!--alert(rs.responseText);-->
+                <!--}-->
+          <!--});-->
+    $('#actor_dis').hide();
+    $('#rel_dis').hide();
+    $('#usecase_dis').hide();
+    $('#diagram_dis').hide();
+    $('#model_dis').show();
+});
+</script>
+</div>
+</div>
+</body>
+</html>

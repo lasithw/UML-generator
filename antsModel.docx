@@ -1,0 +1,5 @@
+@antsuml
+by Ants UML Diagram designers
+Actors and usecases
+
+records--->( music playlist creator computer system predicts rating or preference--->:asynchronous)---> ratingproject--->( project--->:asynchronous)---> songs--->( system divided--->:asynchronous)---> rating--->( end--->:asynchronous)---> songsdatabase--->( consist--->:asynchronous)---> backend

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+    <meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <style>
+       body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+nav{
+    color: blue;
+}
+
+#btn {
+    background-color: tomato;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(15, 15, 95);
+    font-weight: bold;
+    font-family:Lucida Sans Unicode;
+}
+h1{
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(29, 146, 201);
+    font-family:Palatino Linotype;
+}
+p{
+    font-family:Lucida Sans Unicode;
+    color: rgba(90, 107, 167, 0.897);
+}
+
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url(/static/images/background1.jpg);
+  width: auto;
+  height: 800px;
+   -webkit-filter: opacity(.50);
+  filter: opacity(.50);
+}
+
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 1500px;
+  height: 680px;
+  overflow: scroll;
+}
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+ .diagram{
+ padding-top:15px;
+ padding-left:350px;
+
+ }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/logo.png" />
+    <title>UML Designer</title>
+
+</head>
+<body class="align-middle">
+<div class="background-image"></div>
+<div class="content">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img align="left" src="/static/images/logo.png" width="30" height="30" alt=""><span>Ants UML designer</span></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+                <li>
+                    <a href="#">More</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+     <div class="diagram" style="margin-top:50px">
+    <div  id="fullsized_image_holder">
+    {% load static %}
+    <img src="{% static "images/draft.png" %}" alt="UsecaseDiagram" onLoad="this.src='{% static "images/draft.png" %}?' + (new Date()).getTime()">
+    </div>
+    <br><br>
+    <a class="btn btn-info  " href="#"
+    onclick="this.href = $('#fullsized_image_holder img:first').attr('src');"
+    download>Click here to download image</a>
+     </div>
+</div>
+</body>
+</html>
