@@ -1,4 +1,4 @@
 from django.test import TestCase
 
-print("test one")
+print("test two")
 # Create your tests here.
