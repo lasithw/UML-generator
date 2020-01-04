@@ -1,9 +1,9 @@
 @startuml
 ginger->hank: wait
-together->:
+together->o]:
 often->hank: , Hank gives her apple
 hank->ginger: ride , Hank wash and brush
-->sd: brush her tail
-then->fffgg: he gives her food and water
+[o->o]: brush her tail
+then->o]: he gives her food and water
 ginger->hank: love
 @enduml
