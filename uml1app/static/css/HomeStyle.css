@@ -1,5 +1,5 @@
  body {
-    background-image: url(/static/images/background1.jpg);
+    background-image: url(../../static/images/background1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,7 +21,7 @@ nav{
 h1{
     font-size: 60px;
     font-weight: bold;
-    color: rgb(29, 146, 201);
+    color: rgb(0,0,0);
     font-family:Palatino Linotype;
 }
 p{

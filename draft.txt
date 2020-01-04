@@ -1,7 +1,9 @@
 @startuml
-record->rating: music playlist creator computer system predicts rating or preference
-project->song: project
-[o->o]: system divided
-rating->song: end
-database->backend: consist
+ginger->hank: wait
+together->:
+often->hank: , Hank gives her apple
+hank->ginger: ride , Hank wash and brush
+->sd: brush her tail
+then->fffgg: he gives her food and water
+ginger->hank: love
 @enduml
