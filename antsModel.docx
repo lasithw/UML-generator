@@ -2,4 +2,4 @@
 by Ants UML Diagram designers
 Actors and usecases
 
-Ginger--->( wait--->:asynchronous)---> Hanktogether--->(--->:lost)---> Often--->( , Hank gives her apple--->:lost)---> HankHank--->( ride , Hank wash and brush--->:lost)---> Ginger--->( brush her tail--->:found)---> sdThen--->( he gives her food and water--->:asynchronous)---> fffggGinger--->( love--->:lost)---> Hank
+Ginger--->( wait--->:asynchronous)---> Hanktogether--->(--->:lost)---> Often--->( , Hank gives her apple--->:lost)---> HankHank--->( ride , Hank wash and brush--->:lost)---> Ginger--->( brush her tail--->:lost)---> Then--->( he gives her food and water--->:lost)---> Ginger--->( love--->:lost)---> Hank
