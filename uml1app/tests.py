@@ -1,2 +1,2 @@
-print("test kamitha")
+print("test Dinuka")
 
