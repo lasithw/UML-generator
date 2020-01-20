@@ -2,4 +2,5 @@
 by Ants UML Diagram designers
 Actors and usecases
 
-Ginger--->( wait--->:asynchronous)---> Hanktogether--->(--->:lost)---> Often--->( , Hank gives her apple--->:lost)---> HankHank--->( ride , Hank wash and brush--->:lost)---> Ginger--->( brush her tail--->:lost)---> Then--->( he gives her food and water--->:lost)---> Ginger--->( love--->:lost)---> Hank
+violation--->( automated computer program--->:asynchronous)---> express-waysorder--->( order--->:asynchronous)---> dospeed--->( ,--->:asynchronous)---> asaaproject--->( intends--->:lost)---> violationorder--->( order--->:lost)---> do--->( vehicle tracked--->:found)---> Thenif
+[opt] : vehicle--->( vehicle number--->:found)---> number--->( , ticket printed out--->:found)---> vehicle
