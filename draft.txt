@@ -1,9 +1,15 @@
 @startuml
-ginger->hank: wait
-together->o]:
-often->hank: , Hank gives her apple
-hank->ginger: ride , Hank wash and brush
-[o->o]: brush her tail
-then->o]: he gives her food and water
-ginger->hank: love
+|project|
+start
+  #00bfff:is to provide a system for the commuters to buy tickets ;
+|user|
+  #00bfff:arrives at the vending machine he or she can view the available bus with the destinations ;
+#ee82ee: the vending machine calculates the price of the ticket based on the current location and show it to the user ;
+endif
+ if(** a new destination is added  the administrator should test the system by buying a mock ticket to the newly added destination ?**) then (Yes) 
+|ticket|
+  #00bfff:is similar to the normal buying process but the payment process can be skipped if ;
+|administrator|
+  #00bfff:decides not to test the payment module ;
+stop
 @enduml

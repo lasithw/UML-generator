@@ -123,7 +123,7 @@ p{
  <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img align="left" src="/static/images/logo.png" width="30" height="30" alt=""><span>Ants UML designer</span></a>
+                <a class="navbar-brand" href="#"><img align="left" src="/static/images/logo.png" width="30" height="30" alt=""><span>Trouble Shooters</span></a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
@@ -156,7 +156,7 @@ p{
       <!--<br><br>-->
       <button  class="btn btn-primary btn-lg" style = "width:75%" id="diagram_div">DrawDiagram</button>
       <br><br>
-      <button  class="btn btn-primary btn-lg" style = "width:75%" id="model_div">AntsModel</button>
+{#      <button  class="btn btn-primary btn-lg" style = "width:75%" id="model_div">AntsModel</button>#}
       </div>
   </div>
     <!-- Your first column here -->
@@ -205,7 +205,7 @@ p{
     <div class="jumbotron" id="diagram_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;text-align: center">
     <div  id="fullsized_image_holder">
     {% load static %}
-    <img class="con" src="{% static "images/draft.png" %}" width ="100%" height="500px" alt="UsecaseDiagram" onLoad="this.src='{% static "images/draft.png" %}?' + (new Date()).getTime()">
+    <img class="con" src="{% static "images/draft.png" %}" width ="100%" height="500px" alt="ActivityDiagram" onLoad="this.src='{% static "images/draft.png" %}?' + (new Date()).getTime()">
     </div>
     <br><br>
     <a class="btn btn-info  " href="#"
@@ -215,7 +215,7 @@ p{
     <div class="jumbotron" id="model_dis" style="background-color: rgb(180, 216, 235);padding-top:1px;display:none;">
     <div  id="fullsized_image_holder2">
     {% load static %}
-    <img src="{% static "images/antsModel.docx" %}" alt="AntsModel download link is below." onLoad="this.src='{% static "images/antsModel.docx" %}?' + (new Date()).getTime()">
+    <img src="{% static "images/antsModel.docx" %}"  onLoad="this.src='{% static "images/antsModel.docx" %}?' + (new Date()).getTime()">
     </div>
     <br><br>
     <a class="btn btn-info  " href="#"

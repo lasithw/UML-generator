@@ -1,5 +1,16 @@
 @antsuml
 by Ants UML Diagram designers
-Actors and usecases
 
-Ginger--->( wait--->:asynchronous)---> Hanktogether--->(--->:lost)---> Often--->( , Hank gives her apple--->:lost)---> HankHank--->( ride , Hank wash and brush--->:lost)---> Ginger--->( brush her tail--->:lost)---> Then--->( he gives her food and water--->:lost)---> Ginger--->( love--->:lost)---> Hank
+actor: project
+start
+activity: is to provide a system for the commuters to buy tickets ;
+actor:user
+activity: arrives at the vending machine he or she can view the available bus with the destinations ;
+ the vending machine calculates the price of the ticket based on the current location and show it to the user ;
+endif
+ if(** Condition: a new destination is added  the administrator should test the system by buying a mock ticket to the newly added destination ?**) then (Yes) 
+actor:ticket
+activity: is similar to the normal buying process but the payment process can be skipped if ;
+actor:administrator
+activity: decides not to test the payment module ;
+stop
