@@ -155,15 +155,15 @@ def get_activitypage(request):
         # time.sleep(5)
 
         # for ubuntu-----------------------------------------
-        os.system("python -m plantuml draft.txt")
-        print("file is  created successfully!!")
-        os.system("cp draft.png uml1app/static/images")
+        # os.system("python -m plantuml draft.txt")
+        # print("file is  created successfully!!")
+        # os.system("cp draft.png uml1app/static/images")
         # -----------------------------------------------------
 
         # # for windows-----------------------------------------
-        # subprocess.call("python -m plantuml draft.txt")
-        # print("file is  created successfully!!")
-        # os.system("copy draft.png uml1app\static\images")
+        subprocess.call("python -m plantuml draft.txt")
+        print("file is  created successfully!!")
+        os.system("copy draft.png uml1app\static\images")
         # # -----------------------------------------------------
 
         #-----------start of word docx generation--------------------------
@@ -279,11 +279,11 @@ def get_activitypage(request):
         # time.sleep(5)
 
         # for ubuntu-----------------------------------------
-        os.system("cp antsModel.docx uml1app/static/images")
+        # os.system("cp antsModel.docx uml1app/static/images")
         # -----------------------------------------------------
 
         # # for windows-----------------------------------------
-        # os.system("copy antsModel.docx uml1app\static\images")
+        os.system("copy antsModel.docx uml1app\static\images")
         # # -----------------------------------------------------
 
         # ------------------------------------------------------------------
