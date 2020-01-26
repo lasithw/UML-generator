@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/uml1project.iml" filepath="$PROJECT_DIR$/.idea/uml1project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/UML-generator.iml" filepath="$PROJECT_DIR$/.idea/UML-generator.iml" />
     </modules>
   </component>
 </project>
