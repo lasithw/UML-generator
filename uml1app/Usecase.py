@@ -66,8 +66,7 @@ class Usecase:
                         # Simple present tense plural
                         if (tagged[index])[1] == 'VBP' or (tagged[index])[1] == 'VB':
                             # for num in range(index):
-                            if (tagged[index - 1])[1] == 'NN' or (tagged[index - 1])[1] == 'NNS' or (tagged[index - 1])[
-                                1] == 'NNP' or (tagged[index - 1])[1] == 'NNPS':
+                            if (tagged[index - 1])[1] == 'NN' or (tagged[index - 1])[1] == 'NNS' or (tagged[index - 1])[1] == 'NNP' or (tagged[index - 1])[1] == 'NNPS':
                                 if (tagged[index - 3])[0] == "a" or (tagged[index - 3])[0] == "an" or \
                                         (tagged[index - 3])[0] == "the":
                                     a.append((tagged[index - 1])[0] + "_" + item[0])

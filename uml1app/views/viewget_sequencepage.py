@@ -466,11 +466,11 @@ def get_sequencepage(request):
         # time.sleep(5)
 
         # # for ubuntu-----------------------------------------
-        os.system("cp antsModel.docx uml1app/static/images")
+        # os.system("cp antsModel.docx uml1app/static/images")
         # -----------------------------------------------------
 
         # # # for windows-----------------------------------------
-        # os.system("copy antsModel.docx uml1app\static\images")
+        os.system("copy antsModel.docx uml1app\static\images")
         #
 
         print(list1)

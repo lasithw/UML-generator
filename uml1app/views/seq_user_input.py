@@ -390,11 +390,11 @@ def get_seq_input(request):
             # time.sleep(5)
 
             # # for ubuntu-----------------------------------------
-            os.system("cp antsModel.docx uml1app/static/images")
+            # os.system("cp antsModel.docx uml1app/static/images")
             # -----------------------------------------------------
 
             # # # for windows-----------------------------------------
-            # os.system("copy antsModel.docx uml1app\static\images")
+            os.system("copy antsModel.docx uml1app\static\images")
 
         template = loader.get_template("uml1app/sequence.html")
         return HttpResponse(template.render(context2, request))
