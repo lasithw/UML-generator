@@ -1,14 +1,12 @@
 @startuml
-hank->jkjhkg: cowboy
-->asaa: life
-horse->asaa: horse named Ginger
-hank->olio: love Ginger
-->jhmg: ride Ginger day
-->fffgg: walk , and run
-->jhmg: have time
-horse->juk:
-->ghm: brown
-->ghgh: tail and mane are
-->aaa: year
-->qaaa: life
+violation->express-ways: automated computer program
+order->do: order
+speed->asaa: ,
+project->violation: intends
+order->do: order
+->then: vehicle tracked
+opt  it exceeds speed limit of particular area
+vehicle->number: vehicle number
+end
+->vehicle: , ticket printed out
 @enduml
