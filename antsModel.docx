@@ -1,6 +1,11 @@
 @antsuml
 by Ants UML Diagram designers
-Actors and usecases
 
-violation--->( automated computer program--->:asynchronous)---> express-waysorder--->( order--->:asynchronous)---> dospeed--->( ,--->:asynchronous)---> asaaproject--->( intends--->:lost)---> violationorder--->( order--->:lost)---> do--->( vehicle tracked--->:found)---> Thenif
-[opt] : vehicle--->( vehicle number--->:found)---> number--->( , ticket printed out--->:found)---> vehicle
+actor: project
+start
+activity: is to provide a system for the commuters to buy tickets ;
+actor:user
+activity: arrives at the vending machine he or she can view the available bus with the destinations ;
+ the vending machine calculates the price of the ticket based on the current location and show it to the user ;
+endif
+stop
