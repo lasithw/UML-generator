@@ -73,8 +73,8 @@ def get_sequencepage(request):
                             'INSERT INTO  Sequence_Components(sender,reciever,Message,loop,MessageType,conditions,conditionMsg,elsemsg,sender_else,reciver_else,conditionBit,If_loop,else_loop,SeqId) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                             [
                                 values[0], '', values[2], values[3], values[4], values[5], values[6], values[7],
-                                values[8],
-                                values[9], values[10], values[11], values[12], values[13]])
+                                values[8], values[9], values[10], values[11], values[12], values[13]])
+
                     if (values[9] == ''):
                         NoOfNulls_else = NoOfNulls_else + 1
                         NullKeys_else.append(values[13])
@@ -85,8 +85,7 @@ def get_sequencepage(request):
                             'INSERT INTO  Sequence_Components(sender,reciever,Message,loop,MessageType,conditions,conditionMsg,elsemsg,sender_else,reciver_else,conditionBit,If_loop,else_loop,SeqId) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
                             [
                                 values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7],
-                                values[8],
-                                '', values[10], values[11], values[12], values[13]])
+                                values[8], '', values[10], values[11], values[12], values[13]])
                 else:
                     cursorObject.execute(
                         'INSERT INTO  Sequence_Components(sender,reciever,Message,loop,MessageType,conditions,conditionMsg,elsemsg,sender_else,reciver_else,conditionBit,If_loop,else_loop,SeqId) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
