@@ -2,5 +2,7 @@
 by Ants UML Diagram designers
 Actors and usecases
 
-violation--->( automated computer program--->:asynchronous)---> express-waysorder--->( order--->:asynchronous)---> dospeed--->( ,--->:asynchronous)---> asaaproject--->( intends--->:lost)---> violationorder--->( order--->:lost)---> do--->( vehicle tracked--->:found)---> Thenif
-[opt] : vehicle--->( vehicle number--->:found)---> number--->( , ticket printed out--->:found)---> vehicle
+owners--->( project--->:asynchronous)---> projectcustomer--->( unit--->:asynchronous)---> orderif
+[opt] : vehicle--->( and ask customer--->:asynchronous)---> enter--->( customer submit form , care plan issued--->:found)---> customercustomer--->(--->:found)---> alwaysalways--->( owner--->:asynchronous)---> bif
+[opt] : also--->( do engine checkup--->:asynchronous)---> technician--->( completion--->:found)---> Payment machine--->( cleaning , clean or engine checkup etc .--->:found)---> techniciantechnician--->( mark completed caring process--->:lost)---> entrancemachine--->( exit point , payment processing machine check care plan--->:lost)---> customercustomer--->( pay--->:lost)---> thenThen--->( machine process payment--->:lost)---> machineif
+[opt] : --->( % discount given--->:found)---> then--->( , %--->:found)---> Further
