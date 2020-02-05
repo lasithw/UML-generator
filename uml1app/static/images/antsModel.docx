@@ -1,6 +1,7 @@
 @antsuml
 by Ants UML Diagram designers
 
+<<<<<<< HEAD
 actor: project
 start
 activity: is to provide a system for the commuters to buy tickets ;
@@ -9,3 +10,9 @@ activity: arrives at the vending machine he or she can view the available bus wi
  the vending machine calculates the price of the ticket based on the current location and show it to the user ;
 endif
 stop
+=======
+owners--->( project--->:asynchronous)---> projectcustomer--->( unit--->:asynchronous)---> orderif
+[opt] : vehicle--->( and ask customer--->:asynchronous)---> enter--->( customer submit form , care plan issued--->:found)---> customercustomer--->(--->:found)---> alwaysalways--->( owner--->:asynchronous)---> bif
+[opt] : also--->( do engine checkup--->:asynchronous)---> technician--->( completion--->:found)---> Payment machine--->( cleaning , clean or engine checkup etc .--->:found)---> techniciantechnician--->( mark completed caring process--->:lost)---> entrancemachine--->( exit point , payment processing machine check care plan--->:lost)---> customercustomer--->( pay--->:lost)---> thenThen--->( machine process payment--->:lost)---> machineif
+[opt] : --->( % discount given--->:found)---> then--->( , %--->:found)---> Further
+>>>>>>> sequance

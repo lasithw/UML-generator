@@ -1,4 +1,5 @@
 @startuml
+<<<<<<< HEAD
 |project|
 start
   #00bfff:is to provide a system for the commuters to buy tickets ;
@@ -8,3 +9,27 @@ start
 endif
 stop
 @enduml
+=======
+owners->project: project
+customer->order: unit
+opt  owners details are absent then machine automatically recognize type of vehicle and ask customer to enter details
+vehicle->enter: and ask customer
+end
+->customer: customer submit form , care plan issued
+customer->always:
+always->b: owner
+opt  they want
+also->technician: do engine checkup
+end
+->paymentmachine: completion
+->technician: cleaning , clean or engine checkup etc .
+technician->entrance: mark completed caring process
+machine->customer: exit point , payment processing machine check care plan
+customer->then: pay
+then->machine: machine process payment
+opt  vehicle is owned by newly registered customer
+->then: % discount given
+end
+->further: , %
+@enduml
+>>>>>>> sequance
